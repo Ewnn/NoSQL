@@ -37,10 +37,3 @@ This repository contains code examples for each of the NoSQL databases mentioned
 
 Each folder contains detailed instructions for getting started and code examples that you can test locally.
 
-## Installation
-
-Clone this repository to get started with the examples:
-
-```bash
-git clone https://github.com/your-repository/nosql-databases.git
-cd nosql-databases
