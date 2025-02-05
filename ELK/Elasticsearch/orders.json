@@ -1,20 +1,253 @@
-{"index":{"_id":1}}
-{"purchased_at":"2016-07-10T16:52:43Z","lines":[{"product_id":6,"amount":71.32,"quantity":1},{"product_id":3,"amount":58.96,"quantity":3},{"product_id":1,"amount":29.8,"quantity":3}],"total_amount":160.08,"salesman":{"id":11,"name":"Matthus Mitkcov"},"sales_channel":"store","status":"processed"}
-{"index":{"_id":2}}
-{"purchased_at":"2016-03-08T16:18:37Z","lines":[{"product_id":7,"amount":31.44,"quantity":2},{"product_id":4,"amount":74.82,"quantity":2}],"total_amount":106.26,"salesman":{"id":79,"name":"Ulberto Woodruff"},"sales_channel":"store","status":"completed"}
-{"index":{"_id":3}}
-{"purchased_at":"2016-01-04T02:46:54Z","lines":[{"product_id":9,"amount":38.89,"quantity":1}],"total_amount":38.89,"salesman":{"id":68,"name":"Thea Chidgey"},"sales_channel":"store","status":"completed"}
-{"index":{"_id":4}}
-{"purchased_at":"2016-04-14T11:44:29Z","lines":[{"product_id":4,"amount":26.18,"quantity":2},{"product_id":8,"amount":76.45,"quantity":1},{"product_id":1,"amount":65.59,"quantity":3}],"total_amount":168.22,"salesman":{"id":81,"name":"Melany Cerith"},"sales_channel":"store","status":"cancelled"}
-{"index":{"_id":5}}
-{"purchased_at":"2016-02-18T17:11:21Z","lines":[{"product_id":2,"amount":56.06,"quantity":3},{"product_id":5,"amount":79.75,"quantity":3}],"total_amount":135.81,"salesman":{"id":23,"name":"Flynn Dome"},"sales_channel":"web","status":"completed"}
-{"index":{"_id":6}}
-{"purchased_at":"2016-03-26T07:28:22Z","lines":[{"product_id":7,"amount":86.88,"quantity":1},{"product_id":5,"amount":27.34,"quantity":3},{"product_id":5,"amount":88.52,"quantity":2}],"total_amount":202.74,"salesman":{"id":16,"name":"Mirilla Penkman"},"sales_channel":"web","status":"completed"}
-{"index":{"_id":7}}
-{"purchased_at":"2016-05-06T18:37:33Z","lines":[{"product_id":3,"amount":25.27,"quantity":2}],"total_amount":25.27,"salesman":{"id":5,"name":"Modestia McCreadie"},"sales_channel":"app","status":"confirmed"}
-{"index":{"_id":8}}
-{"purchased_at":"2016-11-26T11:24:36Z","lines":[{"product_id":4,"amount":51.26,"quantity":1},{"product_id":8,"amount":72.41,"quantity":1}],"total_amount":123.67,"salesman":{"id":55,"name":"Grange Smiths"},"sales_channel":"phone","status":"cancelled"}
-{"index":{"_id":9}}
-{"purchased_at":"2016-12-26T08:29:47Z","lines":[{"product_id":2,"amount":98.87,"quantity":3}],"total_amount":98.87,"salesman":{"id":5,"name":"Carlyn Stegers"},"sales_channel":"web","status":"cancelled"}
-{"index":{"_id":10}}
-{"purchased_at":"2016-12-21T12:47:43Z","lines":[{"product_id":7,"amount":21.97,"quantity":3},{"product_id":10,"amount":19.26,"quantity":3}],"total_amount":41.23,"salesman":{"id":83,"name":"Kennie Gilks"},"sales_channel":"app","status":"cancelled"}
+[
+    {
+      "index": {
+        "_id": 1
+      },
+      "purchased_at": "2016-07-10T16:52:43Z",
+      "lines": [
+        {
+          "product_id": 6,
+          "amount": 71.32,
+          "quantity": 1
+        },
+        {
+          "product_id": 3,
+          "amount": 58.96,
+          "quantity": 3
+        },
+        {
+          "product_id": 1,
+          "amount": 29.8,
+          "quantity": 3
+        }
+      ],
+      "total_amount": 160.08,
+      "salesman": {
+        "id": 11,
+        "name": "Matthus Mitkcov"
+      },
+      "sales_channel": "store",
+      "status": "processed"
+    },
+    {
+      "index": {
+        "_id": 2
+      },
+      "purchased_at": "2016-03-08T16:18:37Z",
+      "lines": [
+        {
+          "product_id": 7,
+          "amount": 31.44,
+          "quantity": 2
+        },
+        {
+          "product_id": 4,
+          "amount": 74.82,
+          "quantity": 2
+        }
+      ],
+      "total_amount": 106.26,
+      "salesman": {
+        "id": 79,
+        "name": "Ulberto Woodruff"
+      },
+      "sales_channel": "store",
+      "status": "completed"
+    },
+    {
+      "index": {
+        "_id": 3
+      },
+      "purchased_at": "2016-01-04T02:46:54Z",
+      "lines": [
+        {
+          "product_id": 9,
+          "amount": 38.89,
+          "quantity": 1
+        }
+      ],
+      "total_amount": 38.89,
+      "salesman": {
+        "id": 68,
+        "name": "Thea Chidgey"
+      },
+      "sales_channel": "store",
+      "status": "completed"
+    },
+    {
+      "index": {
+        "_id": 4
+      },
+      "purchased_at": "2016-04-14T11:44:29Z",
+      "lines": [
+        {
+          "product_id": 4,
+          "amount": 26.18,
+          "quantity": 2
+        },
+        {
+          "product_id": 8,
+          "amount": 76.45,
+          "quantity": 1
+        },
+        {
+          "product_id": 1,
+          "amount": 65.59,
+          "quantity": 3
+        }
+      ],
+      "total_amount": 168.22,
+      "salesman": {
+        "id": 81,
+        "name": "Melany Cerith"
+      },
+      "sales_channel": "store",
+      "status": "cancelled"
+    },
+    {
+      "index": {
+        "_id": 5
+      },
+      "purchased_at": "2016-02-18T17:11:21Z",
+      "lines": [
+        {
+          "product_id": 2,
+          "amount": 56.06,
+          "quantity": 3
+        },
+        {
+          "product_id": 5,
+          "amount": 79.75,
+          "quantity": 3
+        }
+      ],
+      "total_amount": 135.81,
+      "salesman": {
+        "id": 23,
+        "name": "Flynn Dome"
+      },
+      "sales_channel": "web",
+      "status": "completed"
+    },
+    {
+      "index": {
+        "_id": 6
+      },
+      "purchased_at": "2016-03-26T07:28:22Z",
+      "lines": [
+        {
+          "product_id": 7,
+          "amount": 86.88,
+          "quantity": 1
+        },
+        {
+          "product_id": 5,
+          "amount": 27.34,
+          "quantity": 3
+        },
+        {
+          "product_id": 5,
+          "amount": 88.52,
+          "quantity": 2
+        }
+      ],
+      "total_amount": 202.74,
+      "salesman": {
+        "id": 16,
+        "name": "Mirilla Penkman"
+      },
+      "sales_channel": "web",
+      "status": "completed"
+    },
+    {
+      "index": {
+        "_id": 7
+      },
+      "purchased_at": "2016-05-06T18:37:33Z",
+      "lines": [
+        {
+          "product_id": 3,
+          "amount": 25.27,
+          "quantity": 2
+        }
+      ],
+      "total_amount": 25.27,
+      "salesman": {
+        "id": 5,
+        "name": "Modestia McCreadie"
+      },
+      "sales_channel": "app",
+      "status": "confirmed"
+    },
+    {
+      "index": {
+        "_id": 8
+      },
+      "purchased_at": "2016-11-26T11:24:36Z",
+      "lines": [
+        {
+          "product_id": 4,
+          "amount": 51.26,
+          "quantity": 1
+        },
+        {
+          "product_id": 8,
+          "amount": 72.41,
+          "quantity": 1
+        }
+      ],
+      "total_amount": 123.67,
+      "salesman": {
+        "id": 55,
+        "name": "Grange Smiths"
+      },
+      "sales_channel": "phone",
+      "status": "cancelled"
+    },
+    {
+      "index": {
+        "_id": 9
+      },
+      "purchased_at": "2016-12-26T08:29:47Z",
+      "lines": [
+        {
+          "product_id": 2,
+          "amount": 98.87,
+          "quantity": 3
+        }
+      ],
+      "total_amount": 98.87,
+      "salesman": {
+        "id": 5,
+        "name": "Carlyn Stegers"
+      },
+      "sales_channel": "web",
+      "status": "cancelled"
+    },
+    {
+      "index": {
+        "_id": 10
+      },
+      "purchased_at": "2016-12-21T12:47:43Z",
+      "lines": [
+        {
+          "product_id": 7,
+          "amount": 21.97,
+          "quantity": 3
+        },
+        {
+          "product_id": 10,
+          "amount": 19.26,
+          "quantity": 3
+        }
+      ],
+      "total_amount": 41.23,
+      "salesman": {
+        "id": 83,
+        "name": "Kennie Gilks"
+      },
+      "sales_channel": "app",
+      "status": "cancelled"
+    }
+  ]
+  
