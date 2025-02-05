@@ -1,0 +1,4 @@
+{ "index": { "_index": "receipe", "_id": 1 } }
+{ "name": "Spaghetti Bolognese", "ingredients": "spaghetti, bœuf, sauce tomate", "steps": "Cuire le bœuf, faire bouillir les spaghetti, mélanger" }
+{ "index": { "_index": "receipe", "_id": 2 } }
+{ "name": "Crêpes", "ingredients": "farine, lait, œufs", "steps": "Mélanger, verser dans la poêle, retourner" }

@@ -159,3 +159,65 @@ curl -XGET 'http://localhost:9200/cities/_doc/{document_id}'
   }
 }
 ```
+# Bulk Insert into Elasticsearch
+
+This script performs bulk insertions into an Elasticsearch node for multiple indices. The data for each index is taken from respective JSON files: `receipe.json`, `accounts.json`, `movies.json`, and `products.json`.
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- **Elasticsearch** running locally on `localhost:9200`.
+- **curl** command-line tool.
+- Valid JSON files: `receipe.json`, `accounts.json`, `movies.json`, and `products.json`.
+
+## Usage
+
+Run the following commands to insert data into Elasticsearch:
+
+1. **Insert into `receipe` index**:
+    ```bash
+    curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/receipe/_bulk --data-binary "@receipe.json" &&\
+    printf "\n✅ Insertion receipe index to elastic node OK ✅ "
+    ```
+
+2. **Insert into `accounts` index**:
+    ```bash
+    curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/accounts/docs/_bulk --data-binary "@accounts.json"
+    printf "\n✅ Insertion accounts index to elastic node OK ✅ "
+    ```
+
+3. **Insert into `movies` index**:
+    ```bash
+    curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/movies/_bulk --data-binary "@movies.json"
+    printf "\n✅ Insertion movies index to elastic node OK ✅ "
+    ```
+
+4. **Insert into `products` index**:
+    ```bash
+    curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/products/_bulk --data-binary "@products.json"
+    printf "\n✅ Insertion products index to elastic node OK ✅ "
+    ```
+
+## Verify the Insertion
+
+After performing the bulk insertions, you can verify the data has been inserted into the `accounts` index by running the following command:
+1. **Verify insertion into `receipe` index**:
+    ```bash
+    curl -X GET "localhost:9200/receipe/_search?pretty"
+    ```
+
+2. **Verify insertion  `accounts` index**:
+    ```bash
+    curl -X GET "localhost:9200/accounts/_search?pretty"
+    ```
+
+3. **Verify insertion  `movies` index**:
+    ```bash
+    curl -X GET "localhost:9200/movies/_search?pretty"
+    ```
+
+4. **Verify insertion  `products` index**:
+    ```bash
+    curl -X GET "localhost:9200/products/_search?pretty"
+    ```
