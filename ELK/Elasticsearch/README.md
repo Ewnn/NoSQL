@@ -221,3 +221,142 @@ After performing the bulk insertions, you can verify the data has been inserted 
     ```bash
     curl -X GET "localhost:9200/products/_search?pretty"
     ```
+
+
+# TP : Opérations CRUD avec Elasticsearch
+
+## 1. Vérifier que Elasticsearch fonctionne
+Avant de commencer, assure-toi que ton serveur Elasticsearch est bien en marche avec la commande suivante :
+```bash
+curl -X GET "http://localhost:9200"
+```
+Ou dans Kibana Dev Tools :
+```json
+GET /
+```
+Si Elasticsearch est actif, il renverra des informations sur la version et le cluster.
+
+---
+
+## 2. Créer un document dans l’index `receipe`
+Ajoute une nouvelle recette en envoyant la requête suivante :
+```bash
+curl -X POST "http://localhost:9200/receipe/_doc" -H "Content-Type: application/json" -d '{
+  "created": "2022/03/12 12:00:00",
+  "title": "Chocolate Cake",
+  "description": "A rich and decadent chocolate cake recipe",
+  "preparation_time_minutes": 60,
+  "servings": {
+    "min": 8,
+    "max": 10
+  },
+  "ingredients": [
+    { "name": "flour", "quantity": "2 cups" },
+    { "name": "sugar", "quantity": "2 cups" },
+    { "name": "cocoa powder", "quantity": "3/4 cup" },
+    { "name": "baking powder", "quantity": "2 teaspoons" },
+    { "name": "baking soda", "quantity": "2 teaspoons" },
+    { "name": "salt", "quantity": "1 teaspoon" },
+    { "name": "buttermilk", "quantity": "1 cup" },
+    { "name": "vegetable oil", "quantity": "1/2 cup" },
+    { "name": "eggs", "quantity": "2" },
+    { "name": "vanilla extract", "quantity": "2 teaspoons" },
+    { "name": "boiling water", "quantity": "1 cup" }
+  ],
+  "steps": "1. Preheat oven to 350 degrees F (175 degrees C)..."
+}'
+```
+Ou dans Kibana Dev Tools :
+```json
+POST receipe/_doc
+{
+  "created": "2022/03/12 12:00:00",
+  "title": "Chocolate Cake",
+  "description": "A rich and decadent chocolate cake recipe",
+  "preparation_time_minutes": 60
+}
+```
+✅ **Résultat attendu** : Un document est créé avec un ID généré automatiquement.
+
+---
+
+## 3. Créer un document avec un ID spécifique
+Si tu veux attribuer un ID précis, par exemple `9999`, utilise :
+```bash
+curl -X POST "http://localhost:9200/receipe/_doc/9999" -H "Content-Type: application/json" -d '{
+  "title": "Chocolate Cake",
+  "description": "A delicious chocolate cake recipe",
+  "preparation_time_minutes": 60
+}'
+```
+Ou dans Kibana Dev Tools :
+```json
+POST receipe/_doc/9999
+{
+  "title": "Chocolate Cake",
+  "description": "A delicious chocolate cake recipe",
+  "preparation_time_minutes": 60
+}
+```
+✅ **Résultat attendu** : Un document est créé avec l'ID `9999`.
+
+---
+
+## 4. Lire un document spécifique
+Pour récupérer un document, utilise son ID :
+```bash
+curl -X GET "http://localhost:9200/receipe/_doc/9999"
+```
+Ou dans Kibana Dev Tools :
+```json
+GET receipe/_doc/9999
+```
+✅ **Résultat attendu** : Retourne le contenu du document.
+
+---
+
+## 5. Mettre à jour un document
+Pour modifier un champ (ex. ajouter une description plus détaillée), utilise :
+```bash
+curl -X POST "http://localhost:9200/receipe/_update/9999" -H "Content-Type: application/json" -d '{
+  "doc": {
+    "description": "A rich and decadent chocolate cake with layers of buttercream frosting"
+  }
+}'
+```
+Ou dans Kibana Dev Tools :
+```json
+POST receipe/_update/9999
+{
+  "doc": {
+    "description": "A rich and decadent chocolate cake with layers of buttercream frosting"
+  }
+}
+```
+✅ **Résultat attendu** : Le champ `description` est mis à jour.
+
+---
+
+## 6. Supprimer un document
+Si tu veux supprimer une recette par ID, utilise :
+```bash
+curl -X DELETE "http://localhost:9200/receipe/_doc/9999"
+```
+Ou dans Kibana Dev Tools :
+```json
+DELETE receipe/_doc/9999
+```
+✅ **Résultat attendu** : Le document est supprimé.
+
+---
+
+## 7. Vérifier tous les documents dans l’index
+Pour voir tous les documents enregistrés dans `receipe`, utilise :
+```bash
+curl -X GET "http://localhost:9200/receipe/_search?pretty"
+```
+Ou dans Kibana Dev Tools :
+```json
+GET receipe/_search
+```
+Cela affichera toutes les recettes enregistrées.
