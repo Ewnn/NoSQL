@@ -19,12 +19,8 @@ services:
   logstash:
     image: docker.elastic.co/logstash/logstash:7.11.1
     container_name: logstash
-    environment:
-      - LS_SETTINGS_DIR=/usr/share/logstash/pipeline/config/
     volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
-      - ./data:/usr/share/logstash/external-data
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
       - "5044:5044"
       - "5045:5045"
