@@ -20,7 +20,7 @@ services:
     image: docker.elastic.co/logstash/logstash:7.11.1
     container_name: logstash
     environment:
-      - LS_SETTINGS_DIR=/usr/share/logstash/pipeline/config/
+      - LS_SETTINGS_DIR=/usr/share/logstash/config
     volumes:
       - ./logstash/pipeline:/usr/share/logstash/pipeline
       - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
